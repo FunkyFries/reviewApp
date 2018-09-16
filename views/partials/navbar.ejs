@@ -1,0 +1,19 @@
+<nav>
+    <ul class="navbar">
+        <li><a href="#" id="homeLink">YelpCamp</a></li>
+        <i id="navIcon" class="fas fa-bars"></i>
+        <div class="navLinks visibility">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Logout</a></li>
+        </div>
+    </ul>
+</nav>
+
+<script> 
+    function toggleNavbar(e) {
+        var navLinks = document.querySelector(".navLinks"); 
+        navLinks.classList.toggle("visibility");
+    }
+    document.querySelector("#navIcon").addEventListener("click", toggleNavbar);
+</script>
