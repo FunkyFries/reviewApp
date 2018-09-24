@@ -14,9 +14,12 @@
         <% campgrounds.forEach(function(campground){ %>
             <div class="campground">
                 <img src="<%= campground.image %>" alt="Campground Image">
-                <h4>
-                    <%= campground.name %>
-                </h4>
+                <div id="titleAndMoreInfo">
+                    <h4>
+                        <%= campground.name %>
+                    </h4>
+                    <a id="moreInfoLink" class="linkButton" href="/campgrounds/<%= campground._id %>">More Info</a>
+                </div>
             </div>
         <% }); %>
     </div>

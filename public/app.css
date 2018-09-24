@@ -62,7 +62,15 @@ h1{
     padding-top: 10px;
 }
 
-#goBackButton {
+#titleAndMoreInfo h4 {
+    display: inline-block;
+}
+
+#moreInfoLink {
+    float: right;
+}
+
+/* #goBackButton {
     text-decoration: none;
     color: #0069ed;
     font-family: 'Open Sans';
@@ -70,6 +78,18 @@ h1{
 }
 
 #goBackButton:hover{
+    color: #0053ba;
+    text-decoration: underline;
+} */
+
+.linkButton {
+    text-decoration: none;
+    color: #0069ed;
+    font-family: 'Open Sans';
+    font-size: .9em;
+}
+
+.linkButton:hover {
     color: #0053ba;
     text-decoration: underline;
 }

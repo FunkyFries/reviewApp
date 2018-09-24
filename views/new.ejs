@@ -7,10 +7,11 @@
     <form action="/campgrounds" method="POST">
         <input type="text" name="name" placeholder="name" required>
         <input type="text" name="image" placeholder="image url" required>
+        <input type="text" name="description" placeholder="description" required>
         <button id="formSubmit">Submit!</button>
     </form>
     <div id="goBackDiv">
-        <a id="goBackButton" href="/campgrounds">Go Back</a>
+        <a class="linkButton" href="/campgrounds">Go Back</a>
     </div>
 </div>
 <% include partials/footer %>
