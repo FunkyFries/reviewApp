@@ -32,6 +32,17 @@ h1{
     font-family: 'Open Sans';
 }
 
+.header a {
+    text-decoration: none;
+    font-family: 'Open Sans';
+    color: #0069ed;
+}
+
+.header a:hover {
+    text-decoration: underline;
+    color: #0053ba;
+}
+
 .newCampgroundForm{
     width: 100%;
     margin: 0 auto;
@@ -152,6 +163,24 @@ button:active {
     transform: scale(0.99);
 }
 
+img {
+    border-radius: .3em;
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+
+.image {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.commentAuthor {
+    margin-bottom: .2em; 
+}
+.commentText {
+    margin-top: .2em;
+}
+
 /* Desktop */
 @media screen and (min-width: 750px){
    .container {
@@ -180,5 +209,37 @@ button:active {
     .newCampgroundForm{
     width: 30%;
     margin: 0 auto;
+    }
+    .image {
+        grid-area: image;
+        /* width: 100%; */
+    }
+    .header {
+        grid-area: header;
+    }
+    .description {
+        grid-area: description;
+    }
+    .addComment{
+        grid-area: addComment;
+        width: 75%;
+    }
+    #addCommentButton{
+        padding: .5rem 1rem;
+        font-size: .8rem;
+    }
+    .comment {
+        grid-area: comment;
+    }
+    .grid-container{
+        padding: 40px 10%;
+        display: grid;
+        grid-template-columns: repeat(4, 25vmin);
+        grid-template-areas: 
+            'sidebar image image image'
+            'sidebar header header .'
+            'sidebar description description description'
+            'sidebar addComment . .'
+            'sidebar comment comment comment';
     }
 }
