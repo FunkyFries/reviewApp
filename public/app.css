@@ -26,10 +26,15 @@
     }
 /* Navbar  */
 
-h1{
+h1 {
     text-shadow: .2px 4px 2px rgb(189, 183, 183);
     color: rgb(53, 52, 52);
     font-family: 'Open Sans';
+}
+
+p {
+    font-family: 'Open Sans';
+    font-size: .9rem;
 }
 
 .header a {
@@ -169,9 +174,16 @@ img {
     padding: 4px;
 }
 
+hr {
+    margin-bottom: 22.4px;
+    border-color: rgba(226, 226, 226, 0.5);
+}
+
 .image {
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1px;
+    border: 0;
 }
 
 .commentAuthor {
@@ -179,6 +191,10 @@ img {
 }
 .commentText {
     margin-top: .2em;
+}
+
+.dateCreatedSpan {
+    float: right;
 }
 
 /* Desktop */
@@ -222,11 +238,12 @@ img {
     }
     .addComment{
         grid-area: addComment;
-        width: 75%;
+        width: 100%;
     }
     #addCommentButton{
         padding: .5rem 1rem;
         font-size: .8rem;
+        float: right;
     }
     .comment {
         grid-area: comment;
@@ -234,12 +251,12 @@ img {
     .grid-container{
         padding: 40px 10%;
         display: grid;
-        grid-template-columns: repeat(4, 25vmin);
+        grid-template-columns: 25% 75%;
         grid-template-areas: 
-            'sidebar image image image'
-            'sidebar header header .'
-            'sidebar description description description'
-            'sidebar addComment . .'
-            'sidebar comment comment comment';
+            'sidebar image'
+            'sidebar header'
+            'sidebar description'
+            'sidebar addComment'
+            'sidebar comment';
     }
 }

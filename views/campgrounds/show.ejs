@@ -13,9 +13,12 @@
 
 <img class="image" src="<%= campground.image %>" alt="Picture of <%= campground.name %>">
 
-<p class="description"><%= campground.description %></p>
+<p class="description">
+    <%= campground.description %>
+</p>
 
 <form class="addComment" action="/campgrounds/<%= campground._id %>/comments/new">
+    <hr>
     <button id="addCommentButton">
         Add New Comment
     </button>
@@ -23,7 +26,10 @@
 
 <% campground.comments.forEach(function(comment){ %>
     <div class="comment">
-        <p class="commentAuthor"><strong><%= comment.author %></strong></p>
+        <p class="commentAuthor">
+            <strong><%= comment.author %></strong>
+            <span class="dateCreatedSpan">10 days ago</span>
+        </p>
         <p class="commentText"><%= comment.text %></p>
     </div>
 <% }) %>
