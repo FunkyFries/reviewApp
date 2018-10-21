@@ -8,6 +8,10 @@
         font-family: 'Pacifico';
     }
 
+    nav a:hover {
+        color: #7c868f;
+    }
+
     .navbar {
         width: 100%;
         margin: 0 auto;
