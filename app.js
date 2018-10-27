@@ -8,7 +8,7 @@ const LocalStrategy           = require("passport-local");
 const bodyParser              = require("body-parser");
 const mongoose                = require("mongoose");
 const User                    = require("./models/user");
-const seedDB                  = require("./seeds");
+// const seedDB                  = require("./seeds");
 
 const commentRoutes       = require("./routes/comments");
 const campgroundRoutes    = require("./routes/campgrounds");
@@ -23,7 +23,7 @@ mongoose.connect("mongodb://localhost/YelpCamp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "/public")));
 app.set("view engine", "ejs");
-seedDB();
+// seedDB(); //seed the database
 
 app.use(sessions({
     cookieName: "session",

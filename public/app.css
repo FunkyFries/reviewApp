@@ -236,6 +236,7 @@ hr {
     }
     .header {
         grid-area: header;
+        margin-bottom: 0;
     }
     .description {
         grid-area: description;
@@ -252,6 +253,21 @@ hr {
     .comment {
         grid-area: comment;
     }
+    .campgroundAuthor {
+        grid-area: author;
+        margin-top: 0;
+        font-style: italic;
+        font-size: .7em;
+        color: rgb(151, 148, 148);
+    }
+    .campgroundAuthor a{
+        text-decoration: none;
+        color: #0069ed;
+    }
+    .campgroundAuthor a:hover {
+        text-decoration: underline;
+        color: #0053ba;
+    }
     .grid-container{
         padding: 40px 10%;
         display: grid;
@@ -259,6 +275,7 @@ hr {
         grid-template-areas: 
             'sidebar image'
             'sidebar header'
+            'sidebar author'
             'sidebar description'
             'sidebar addComment'
             'sidebar comment';
