@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-//SCHEMA SETUP
+// SCHEMA SETUP
 const campgroundSchema = new mongoose.Schema({
     name: String,
     image: String,
@@ -8,9 +8,9 @@ const campgroundSchema = new mongoose.Schema({
     comments: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Comment"
-        }
-    ]
+            ref: "Comment",
+        },
+    ],
 });
 
 module.exports = mongoose.model("Campground", campgroundSchema);
