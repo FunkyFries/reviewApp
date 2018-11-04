@@ -1,7 +1,6 @@
 <nav>
     <ul class="navbar">
-        <li><a href="/" id="homeLink">YelpCamp</a></li>
-        <i id="navIcon" class="fas fa-bars"></i>
+        <li><a href="/" id="homeLink">YelpCamp</a><i id="navIcon" class="fas fa-bars"></i></li>
         <div class="navLinks visibility">
             <% if(!currentUser){ %>
                 <li><a href="/login">Login</a></li>
@@ -14,9 +13,9 @@
     </ul>
 </nav>
 
-<script> 
+<script>
     function toggleNavbar(e) {
-        var navLinks = document.querySelector(".navLinks"); 
+        const navLinks = document.querySelector(".navLinks"); 
         navLinks.classList.toggle("visibility");
     }
     document.querySelector("#navIcon").addEventListener("click", toggleNavbar);

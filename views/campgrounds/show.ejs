@@ -9,13 +9,28 @@
         <li>Info 3</li>
     </ul>
 </div>
-<h3 class="header"><a href="#"><%= campground.name %></a></h3>
+<h3 class="header" id="campgroundShowHeader"><a href="#"><%= campground.name %></a></h3>
 
 <img class="image" src="<%= campground.image %>" alt="Picture of <%= campground.name %>">
 
 <p class="description">
     <%= campground.description %>
 </p>
+
+<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+    <div class="editAndDeleteCampground">
+        <form action="/campgrounds/<%= campground._id %>/edit">
+            <button class="editButton" id="editCampgroundButton">
+                Edit
+            </button>
+        </form>
+        <form class="deleteCampground" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+            <button class="deleteButton" id="deleteCampgroundButton">
+                Delete
+            </button>
+        </form>
+    </div>
+<% } %>
 
 <p class="campgroundAuthor">
     Submitted By <a href="#"><%= campground.author.username %></a>
@@ -35,6 +50,20 @@
             <span class="dateCreatedSpan">10 days ago</span>
         </p>
         <p class="commentText"><%= comment.text %></p>
+    <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+        <div class="editAndDeleteComment">
+            <form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">
+                <button class="editButton" id="editCommentButton">
+                    Edit
+                </button>
+            </form>
+            <form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                <button class="deleteButton" id="deleteCommentButton">
+                    Delete
+                </button>
+            </form>
+        </div>
+    <% } %>
 <% }) %>
     </div>
 </div>

@@ -7,6 +7,7 @@ const passport                = require("passport");
 const LocalStrategy           = require("passport-local");
 const bodyParser              = require("body-parser");
 const mongoose                = require("mongoose");
+const methodOverride          = require("method-override");
 const User                    = require("./models/user");
 // const seedDB                  = require("./seeds");
 
@@ -23,6 +24,8 @@ mongoose.connect("mongodb://localhost/YelpCamp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "/public")));
 app.set("view engine", "ejs");
+app.use(methodOverride("_method"));
+mongoose.set("useFindAndModify", false);
 // seedDB(); //seed the database
 
 app.use(sessions({

@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<% include ../partials/navbar %>
+
+<h1 id="editCampgroundHeader" class="header">Edit <%= campground.name %></h1>
+
+<div class="campgroundForm">
+    <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+        <input type="text" name="campground[name]" value="<%= campground.name %>" required>
+        <input type="text" name="campground[image]" value="<%= campground.image %>" required>
+        <input type="text" name="campground[description]" value="<%= campground.description %>" required>
+        <button id="formSubmit">Submit!</button>
+    </form>
+    <div id="goBackDiv">
+        <a class="linkButton" href="/campgrounds/<%= campground._id %>">Go Back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>

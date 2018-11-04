@@ -1,12 +1,13 @@
 <% include ./partials/header %>
 <% include ./partials/navbar %>
 
-<h1>Sign up!</h1>
+<h1 class="header">Sign up!</h1>
 
+<div class="campgroundForm">
 <form action="/register" method="POST">
     <input type="text" name="username" placeholder="username">
     <input type="password" name="password" placeholder="password">
-    <button>Sign Up</button>
+    <button id="formSubmit">Sign Up</button>
 </form>
-
+</div>
 <% include ./partials/footer %>

@@ -6,6 +6,7 @@
         text-decoration: none;
         font-size: 1.2em;
         font-family: 'Pacifico';
+        margin-left: 20px;
     }
 
     nav a:hover {
@@ -25,8 +26,10 @@
         display: none;
     }
 
-    #homeLink {
-        margin-left: 20px;
+    #navIcon {
+        float: right;
+        padding-top: 10px;
+        margin-right: 20px;
     }
 /* Navbar  */
 
@@ -52,12 +55,12 @@ p {
     color: #0053ba;
 }
 
-.newCampgroundForm{
+.campgroundForm{
     width: 100%;
     margin: 0 auto;
 }
 
-.newCampgroundForm input {
+.campgroundForm input {
     border: 1px solid grey;
     border-radius: 4px;
     align-content: center;
@@ -74,8 +77,12 @@ p {
     border-radius: 4px;
 }
 
-#newCampgroundHeader {
+.header {
     text-align: center;
+}
+
+#campgroundShowHeader {
+    text-align: left;
 }
 
 #goBackDiv {
@@ -89,18 +96,6 @@ p {
 #moreInfoLink {
     float: right;
 }
-
-/* #goBackButton {
-    text-decoration: none;
-    color: #0069ed;
-    font-family: 'Open Sans';
-    font-size: .9em;
-}
-
-#goBackButton:hover{
-    color: #0053ba;
-    text-decoration: underline;
-} */
 
 .linkButton {
     text-decoration: none;
@@ -201,6 +196,64 @@ hr {
     float: right;
 }
 
+#addCommentButton{
+        padding: .3rem 1rem;
+        font-size: .8rem;
+    }
+
+#editCampgroundButton a{
+    text-decoration: none;
+    color: #ffffff;
+}
+#editCampgroundButton{
+    padding: .3rem .1rem;
+    font-size: .8rem;
+    float: left;
+    width: 100%;
+    background-color: rgb(223, 163, 35);
+    width: 50%;
+}
+#editCampgroundButton:hover {
+    background-color: rgb(209, 144, 3);
+}
+.deleteButton{
+    padding: .3rem .1rem;
+    font-size: .8rem;
+    background-color: rgb(223, 35, 35);
+    float: left;
+}
+#deleteCampgroundButton{
+    width: 50%;
+}
+#deleteCommentButton{
+    width: 20%;
+}
+.deleteButton:hover {
+    background-color: rgb(209, 3, 3);
+}
+#editCommentButton {
+    padding: .3rem .1rem;
+    font-size: .8rem;
+    width: 20%;
+    background-color: rgb(223, 163, 35);
+    float: left;
+}
+#editCommentButton:hover {
+    background-color: rgb(209, 144, 3);
+}
+#editCommentButton a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: 100%;
+}
+.editAndDeleteComment {
+    height: 1.5rem;
+}
+#formSubmit {
+    padding: .3rem;
+}
+
 /* Desktop */
 @media screen and (min-width: 750px){
    .container {
@@ -223,10 +276,31 @@ hr {
     #navIcon {
         display: none;
     }
+    #editCampgroundButton{
+        width: 10%;
+        margin-right: .5rem;
+    }
+    #editCommentButton{
+        margin-right: .5rem;
+    }
+    #deleteCampgroundButton{
+        width: 10%;
+    }
+    #addCommentButton{
+        float: right;
+    }
+    #editCommentButton{
+        width: 10%;
+    }
+    #deleteCommentButton{
+        margin-bottom: .4rem;
+        display: block;
+        width: 10%;
+    }
     .visibility {
         display: block;
     }
-    .newCampgroundForm{
+    .campgroundForm{
     width: 30%;
     margin: 0 auto;
     }
@@ -244,11 +318,6 @@ hr {
     .addComment{
         grid-area: addComment;
         width: 100%;
-    }
-    #addCommentButton{
-        padding: .5rem 1rem;
-        font-size: .8rem;
-        float: right;
     }
     .comment {
         grid-area: comment;
@@ -268,6 +337,9 @@ hr {
         text-decoration: underline;
         color: #0053ba;
     }
+    .editAndDeleteCampground {
+        grid-area: editAndDeleteCampground;
+    }
     .grid-container{
         padding: 40px 10%;
         display: grid;
@@ -276,6 +348,7 @@ hr {
             'sidebar image'
             'sidebar header'
             'sidebar author'
+            'sidebar editAndDeleteCampground'
             'sidebar description'
             'sidebar addComment'
             'sidebar comment';
