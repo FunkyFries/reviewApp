@@ -16,15 +16,20 @@ router.get("/", function (req, res) {
     });
 });
 
+// New campground route
+router.get("/new", middleware.isLoggedIn, middleware.csrf, function (req, res) {
+    res.render("campgrounds/new", { csrfToken: req.csrfToken() });
+});
+
 // Create campground route
-router.post("/", middleware.isLoggedIn, function (req, res) {
-    const { name, image, description } = req.body;
+router.post("/", middleware.isLoggedIn, middleware.csrf, function (req, res) {
+    const { name, image, description, price } = req.body;
     const author = {
         id: req.user._id,
         username: req.user.username,
     };
     const newCampground = {
-        name, image, description, author,
+        name, image, description, price, author,
     };
     Campground.create(newCampground, function (err, newlyCreated) {
         if (err) {
@@ -35,16 +40,12 @@ router.post("/", middleware.isLoggedIn, function (req, res) {
     });
 });
 
-// New campground route
-router.get("/new", middleware.isLoggedIn, function (req, res) {
-    res.render("campgrounds/new");
-});
-
 // Show campground route
 router.get("/:id", function (req, res) {
     Campground.findOne({ _id: req.params.id }).populate("comments").exec(function (err, foundCampground) {
-        if (err) {
-            console.log(err);
+        if (err || !foundCampground) {
+            req.flash("error", "Campground not found");
+            res.redirect("back");
         } else {
             res.render("campgrounds/show", { campground: foundCampground });
         }
@@ -52,14 +53,14 @@ router.get("/:id", function (req, res) {
 });
 
 // Edit campground route
-router.get("/:id/edit", middleware.checkCampgroundOwnership, function (req, res) {
+router.get("/:id/edit", middleware.checkCampgroundOwnership, middleware.csrf, function (req, res) {
     Campground.findOne({ _id: req.params.id }, function (err, foundCampground) {
-        res.render("campgrounds/edit", { campground: foundCampground });
+        res.render("campgrounds/edit", { campground: foundCampground, csrfToken: req.csrfToken() });
     });
 });
 
 // Update campground route
-router.put("/:id", middleware.checkCampgroundOwnership, function (req, res) {
+router.put("/:id", middleware.checkCampgroundOwnership, middleware.csrf, function (req, res) {
     // find and update the correct campground
     Campground.findOneAndUpdate(req.params.id, req.body.campground,
         function (err, updatedCampground) {
@@ -78,6 +79,7 @@ router.delete("/:id", middleware.checkCampgroundOwnership, function (req, res) {
         if (err) {
             res.redirect("/campgrounds");
         } else {
+            req.flash("success", "Campground deleted");
             res.redirect("/campgrounds");
         }
     });

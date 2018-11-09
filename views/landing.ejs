@@ -1,10 +1,36 @@
-<% include partials/header %>
-<% include partials/navbar %>
+<!DOCTYPE html>
+<html>
 
-<h1>Landing Page</h1>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>YelpCamp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/landing.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%7CPacifico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+        crossorigin="anonymous">
+</head>
+<body>
 
-<p>Welcome to YelpCamp</p>
+<div id="landing-header">
+    <div id="header-frame">
+    <h1>Welcome to YelpCamp</h1>
+    
+    <form action="/campgrounds">
+        <button class="editButton" id="editCampgroundButton">
+            View All Campgrounds
+        </button>
+    </form>
+    </div>
+</div>
 
-<a href="/campgrounds">View All campgrounds</a>
+<ul class="slideshow">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 
 <% include partials/footer %>

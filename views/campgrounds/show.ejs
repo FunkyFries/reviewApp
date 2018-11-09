@@ -9,8 +9,10 @@
         <li>Info 3</li>
     </ul>
 </div>
-<h3 class="header" id="campgroundShowHeader"><a href="#"><%= campground.name %></a></h3>
-
+<div class="header">
+    <h3 id="campgroundShowHeader"><a href="#"><%= campground.name %></a></h3>
+    <h3 id="price">$<%= campground.price %>/night</h3>
+</div>
 <img class="image" src="<%= campground.image %>" alt="Picture of <%= campground.name %>">
 
 <p class="description">

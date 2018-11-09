@@ -1,6 +1,6 @@
 <nav>
     <ul class="navbar">
-        <li><a href="/" id="homeLink">YelpCamp</a><i id="navIcon" class="fas fa-bars"></i></li>
+        <li><a href="/campgrounds" id="homeLink">YelpCamp</a><i id="navIcon" class="fas fa-bars"></i></li>
         <div class="navLinks visibility">
             <% if(!currentUser){ %>
                 <li><a href="/login">Login</a></li>
@@ -20,3 +20,14 @@
     }
     document.querySelector("#navIcon").addEventListener("click", toggleNavbar);
 </script>
+
+<% if(error && error.length > 0) { %>
+    <div class="flash-error" role="alert">
+        <%= error %>
+    </div>
+<% } %>
+<% if(success && success.length > 0) { %>
+    <div class="flash-success" role="alert">
+        <%= success %>
+    </div>
+<% } %>

@@ -32,6 +32,27 @@
         margin-right: 20px;
     }
 /* Navbar  */
+.flash-error {
+    width: 80%;
+    background-color: rgba(250, 119, 119, 0.247);
+    font-family: 'Open Sans';
+    font-size: .8em;
+    color: rgb(139, 42, 42);
+    padding: 10px 20px;
+    margin: 20px auto 0;
+    font-weight: bold;
+}
+
+.flash-success {
+    width: 80%;
+    background-color: rgba(119, 250, 125, 0.247);
+    font-family: 'Open Sans';
+    font-size: .8em;
+    color: rgb(51, 129, 43);
+    padding: 10px 20px;
+    margin: 20px auto 0;
+    font-weight: bold;
+}
 
 h1 {
     text-shadow: .2px 4px 2px rgb(189, 183, 183);
@@ -77,12 +98,12 @@ p {
     border-radius: 4px;
 }
 
-.header {
-    text-align: center;
+#campgroundShowHeader {
+    float: left;
 }
 
-#campgroundShowHeader {
-    text-align: left;
+#price {
+    float: right;
 }
 
 #goBackDiv {
@@ -254,6 +275,10 @@ hr {
     padding: .3rem;
 }
 
+.header {
+    text-align: center;
+}
+
 /* Desktop */
 @media screen and (min-width: 750px){
    .container {
@@ -297,6 +322,12 @@ hr {
         display: block;
         width: 10%;
     }
+    #campgroundShowHeader{
+        float: left;
+    }
+    #price{
+        float: right;
+    }
     .visibility {
         display: block;
     }
@@ -310,6 +341,10 @@ hr {
     }
     .header {
         grid-area: header;
+        margin-bottom: 0;
+    }
+    .header h3 {
+        display: inline-block;
         margin-bottom: 0;
     }
     .description {
