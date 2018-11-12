@@ -23,7 +23,9 @@ router.get("/new", middleware.isLoggedIn, middleware.csrf, function (req, res) {
 
 // Create campground route
 router.post("/", middleware.isLoggedIn, middleware.csrf, function (req, res) {
-    const { name, image, description, price } = req.body;
+    const {
+        name, image, description, price,
+    } = req.body;
     const author = {
         id: req.user._id,
         username: req.user.username,
