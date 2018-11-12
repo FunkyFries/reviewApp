@@ -72,6 +72,7 @@ app.get("*", function (req, res) {
 });
 
 // Tell Express to listen for requests (start server)
-app.listen(3000, function () {
+const port = process.env.PORT || 80;
+app.listen(port, function () {
     console.log("Server started");
 });
