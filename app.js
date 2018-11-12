@@ -34,7 +34,7 @@ mongoose.set("useFindAndModify", false);
 
 app.use(sessions({
     cookieName: "session",
-    secret: process.env.secret,
+    secret: process.env.CLIENT_SECRET,
     duration: 30 * 60 * 1000,
     cookie: {
         ephemeral: true,
