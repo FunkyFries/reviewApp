@@ -78,22 +78,22 @@ button:active {
 }
 
 .slideshow li:nth-child(1) {
-    background-image: url(https://cdn.pixabay.com/photo/2015/10/12/14/58/camping-984038_960_720.jpg)
+    background-image: url(https://lh3.googleusercontent.com/hFP6xaxerWujnfJvvgLZPWxA-uUHLgPttzBrDdol0hynPdr2uQdkMqus4l5ejwa09VDW2w5PGFsiKrPDqizCE5DfVVsMTuAId3ePIWPE7NH6Y7N-Esrr9IqQYeq_HrClh42PAd-39Q=w2400)
 }
 .slideshow li:nth-child(2) {
-    background-image: url(https://cdn.pixabay.com/photo/2016/11/21/16/03/campfire-1846142__340.jpg);
+    background-image: url(https://lh3.googleusercontent.com/Nn-_vV_b5rodsy7CnzIesayBsUGDHzq8pgJcECq0Tb1Slu661O5pwXGobK0B3eT6yRK3RDCcqu_y29iiQkt11qHTPmcYtSyZZfYfQn_2qthiDq6G2GeJqpZFtZD9e_jHeRbXGjBDMA=w2400);
     animation-delay: 10s;
 }
 .slideshow li:nth-child(3) {
-    background-image: url(http://i.imgur.com/emvhOnb.jpg);
+    background-image: url(https://lh3.googleusercontent.com/_dFnT5PZl9wAO1kAjs8vBSXLuEhc1BrrXsG0S6lpEWNBdrjtuJoejx7qur7Md7jOUXIkGlYJtLN-jcOFi39kERLiqFpYq_EX3slR3NITs4JMWoIg5WDMdnOB3wivAJR_Nj7vou92Qw=w2400);
     animation-delay: 20s;
 }
 .slideshow li:nth-child(4) {
-    background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+    background-image: url(https://lh3.googleusercontent.com/6QvXGOt2cTlKdgpyeacF-o5EBeKI33QJGbhOMI-f2q_RmAQkQVH6oIyfRuG0_qvPzOgwdzwl5191km_orh3u6T5yYEDeLdJaK20Vsi-1bV7T8IfuLXBMu6mSK31JBGNDhRzRy1f8MA=w2400);
     animation-delay: 30s;
 }
 .slideshow li:nth-child(5) {
-    background-image: url(https://cdn.pixabay.com/photo/2016/11/29/04/17/bonfire-1867275__340.jpg);
+    background-image: url(https://lh3.googleusercontent.com/Oexdf_z85EA5jiNLU09VnOXhOtBaPYcMnIhzopjMmTiSkicqTgiAAP_7xwcEJjYbhAosEdMZfP9VigZZ-m7o6MaTeNJrAb8xXX0fwEFBkNkFwpo-aNHU6fTm-5z3V91snegHEh7LIg=w2400);
     animation-delay: 40s;
 }
 
